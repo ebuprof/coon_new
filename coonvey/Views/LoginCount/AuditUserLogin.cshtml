@@ -1,0 +1,66 @@
+﻿@model IEnumerable<coonvey.ViewModels.LoginAuditViewModel>
+@{
+    ViewBag.Title = "User Login Audits";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    <h4>Total audit report for user login is [@ViewBag.LoginCount]</h4>
+    @if (ViewBag.LoginCount == 0)
+    {
+        <hr />
+    <p>No audit report found for user login.</p>
+    }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AuditId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Timestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuditEvent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IpAddress)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuditId)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Timestamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuditEvent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IpAddress)
+                </td>
+
+            </tr>
+        }
+
+
+    </table>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+

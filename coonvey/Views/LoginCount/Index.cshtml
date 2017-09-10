@@ -1,0 +1,44 @@
+﻿@model IEnumerable<coonvey.ViewModels.LoginCountViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfTimes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastLoggedInDate)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfTimes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastLoggedInDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Audit User Login", "AuditUserLogin", new { id = item.UserId })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

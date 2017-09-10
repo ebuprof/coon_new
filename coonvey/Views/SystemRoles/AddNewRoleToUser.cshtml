@@ -1,0 +1,68 @@
+﻿@model coonvey.ViewModels.ChangeUserRoleViewModel
+
+@{
+    ViewBag.Title = "Add New Role To User";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.HiddenFor(model => model.UserId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @Html.DisplayFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                    @Html.HiddenFor(model => model.UserName)
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                    @Html.HiddenFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.RoleInUse, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @Html.DisplayFor(model => model.RoleInUse, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+                    @Html.HiddenFor(model => model.RoleInUse)
+                    @Html.ValidationMessageFor(model => model.RoleInUse, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @*<br/>*@
+            <div class="form-group">
+                @Html.LabelFor(model => model.RoleId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    @Html.DropDownList("RoleId", null, htmlAttributes: new { @class = "form-control col-md-7 col-xs-12" })
+                    @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Add" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+

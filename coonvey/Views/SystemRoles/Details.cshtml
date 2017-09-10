@@ -1,0 +1,71 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+        </dl>
+        <hr />
+    </div>
+    <h4>List of users in this role [Total of @ViewBag.UserCount]</h4>
+    @if (ViewBag.UserCount == 0)
+    {
+        <hr />
+        <p>No users found in this role.</p>
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                Username
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in ViewBag.Users)
+            {
+            <tr>
+                <td>
+                    @item.UserName
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.PhoneNumber
+                </td>
+                <td>
+                    @Html.ActionLink("Change Role", "Change", new { id = item.Id, role = Model.Name }) |
+                    @Html.ActionLink("Add Another Role", "AddNewRoleToUser", new { id = item.Id, role = Model.Name }) |
+                    @Html.ActionLink("Remove from Role", "RemoveFromRole", new { id = item.Id, role = Model.Name })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+
+
+
