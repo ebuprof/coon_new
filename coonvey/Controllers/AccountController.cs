@@ -184,6 +184,14 @@ namespace coonvey.Controllers
             }
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<JsonResult> LoginJson(string username, string password, bool rememberme)
+        {
+            return Json(false);
+        }
+
         //
         // GET: /Account/VerifyCode
         [AllowAnonymous]

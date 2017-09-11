@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using Forloop.HtmlHelpers;
+using System.Web;
 using System.Web.Optimization;
 
 namespace coonvey
@@ -26,6 +27,8 @@ namespace coonvey
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            ScriptContext.ScriptPathResolver = System.Web.Optimization.Scripts.Render;
         }
     }
 }

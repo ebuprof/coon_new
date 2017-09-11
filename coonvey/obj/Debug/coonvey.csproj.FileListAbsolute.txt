@@ -84,3 +84,6 @@ C:\ProjectWork\Web\coonvey\coonvey\bin\Npgsql.EntityFramework.dll
 C:\ProjectWork\Web\coonvey\coonvey\bin\Npgsql.EntityFramework.xml
 C:\ProjectWork\Web\coonvey\coonvey\bin\MailKit.dll
 C:\ProjectWork\Web\coonvey\coonvey\bin\MailKit.xml
+C:\ProjectWork\Web\coonvey\coonvey\obj\Debug\coonvey.csprojResolveAssemblyReference.cache
+C:\ProjectWork\Web\coonvey\coonvey\bin\Forloop.HtmlHelpers.dll
+C:\ProjectWork\Web\coonvey\coonvey\bin\Forloop.HtmlHelpers.xml

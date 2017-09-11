@@ -48,6 +48,10 @@
       <HintPath>..\packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Forloop.HtmlHelpers, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Forloop.HtmlHelpers.1.2.0.0\lib\net45\Forloop.HtmlHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MailKit, Version=1.18.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\MailKit.1.18.1.1\lib\net451\MailKit.dll</HintPath>
       <Private>True</Private>
@@ -239,9 +243,15 @@
     <Compile Include="ViewModels\UsersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\bootstrap-grid.css" />
+    <Content Include="Content\assets\css\bootstrap-grid.min.css" />
+    <Content Include="Content\assets\css\bootstrap-reboot.css" />
+    <Content Include="Content\assets\css\bootstrap-reboot.min.css" />
     <Content Include="Content\assets\css\bootstrap-theme.css" />
     <Content Include="Content\assets\css\bootstrap.css" />
     <Content Include="Content\assets\css\bootstrap.min.css" />
+    <Content Include="Content\assets\css\bootstrap_old.css" />
+    <Content Include="Content\assets\css\bootstrap_old.min.css" />
     <Content Include="Content\assets\css\materialize.css" />
     <Content Include="Content\assets\css\materialize.min.css" />
     <Content Include="Content\assets\css\mdb.css" />
@@ -267,6 +277,8 @@
     <Content Include="Content\assets\img\user.png" />
     <Content Include="Content\assets\js\bootstrap.js" />
     <Content Include="Content\assets\js\bootstrap.min.js" />
+    <Content Include="Content\assets\js\bootstrap_old.js" />
+    <Content Include="Content\assets\js\bootstrap_old.min.js" />
     <Content Include="Content\assets\js\jquery-3.1.1.js" />
     <Content Include="Content\assets\js\jquery-3.1.1.min.js" />
     <Content Include="Content\assets\js\mdb.js" />
@@ -279,6 +291,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\app\LoginModal.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\assets\font\fa\fontawesome-webfont.eot" />
@@ -340,6 +353,12 @@
     <Content Include="Content\assets\sass\mdb\free\_typography.scss" />
     <Content Include="Content\assets\sass\mdb\free\_waves.scss" />
     <Content Include="Content\assets\sass\mdb\_custom.scss" />
+    <Content Include="Content\assets\css\bootstrap-grid.css.map" />
+    <Content Include="Content\assets\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\assets\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\assets\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\assets\css\bootstrap.css.map" />
+    <Content Include="Content\assets\css\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DBScript.sql" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -406,6 +425,9 @@
     <Content Include="Views\SystemRoles\Edit.cshtml" />
     <Content Include="Views\SystemRoles\Index.cshtml" />
     <Content Include="Views\SystemRoles\RemoveFromRole.cshtml" />
+    <Content Include="Views\Shared\_LoginPartialForm.cshtml" />
+    <Content Include="Views\Shared\LoginModal.cshtml" />
+    <Content Include="Views\Shared\_LayoutModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
