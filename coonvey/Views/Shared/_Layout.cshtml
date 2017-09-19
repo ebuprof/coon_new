@@ -5,8 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Coonvey</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @*@Styles.Render("~/Content/css")*@
+   @Styles.Render("~/Content/mkit")  
+    @*@Scripts.Render("~/bundles/modernizr")*@
+   
+
+   
 
 </head>
 <body>
@@ -14,7 +18,7 @@
     {
         @Html.Partial("LoginModal")
     }
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-primary  navbar-fixed-top " role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,29 +26,80 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Coonvey", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+               
+                    <img src="~/Content/assets/img/logo.png" width="50" height="50" style="float:left" />
+                
+                    @Html.ActionLink("Coonvey", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
                 @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right ml-auto">
+                    <li><a href="#overview">Book Ticket </a></li>
+                    <li><a href="#features">Features </a></li>
+                    <li><a href="#mobile">Mobile App</a></li>
+                    <li><a href="#business">Business</a></li>
+                </ul>
+                
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Coonvey Solution</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    </div>
+    
+        @RenderBody()
+        <hr/>
+
+    
+    
+
+    
+        <footer class="footer" style="background-color:#f2f5f6">
+            <div class="container">
+
+                <div class="row sharing-area text-center">
+                    <h3>Follow Us!</h3>
+                    <a class="btn btn-social btn-twitter btn-simple" href="">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-social btn-facebook btn-simple" href="">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a class="btn btn-social btn-instagram btn-simple" href="">
+                        <i class="fa fa-instagram-square"></i>
+                    </a>
+
+                </div>
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#overview">Book Ticket </a>
+                        </li>
+                        <li>
+                            <a href="#features">Features </a>
+                        </li>
+                        <li>
+                            <a href="#mobile">Mobile App</a>
+                        </li>
+                        <li>
+                            <a href="#business">Business</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright pull-right">
+                    <p>&copy; @DateTime.Now.Year Copyright- Coonvey </p>
+                </div>
+            </div>
+    </footer>
+    
+    
+
+        
+   
+    @Scripts.Render("~/Content/mkitjs")
+    @Scripts.Render("~/Content/datepicker")
+    @*@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval")*@
     @RenderSection("scripts", required: false)
     @Html.RenderScripts()
 </body>

@@ -1,54 +1,187 @@
 ﻿@using coonvey.ViewModels
 @model LoginViewModel
-
-<div class="row">
+@Scripts.Render("~/Content/mdb")
+@Scripts.Render("~/bundles/mdbjs")
+    @*<div class="row">
         <div class="col-md-8">
+
             <section id="loginForm">
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "loginform" }))
                 {
                     @Html.AntiForgeryToken()
                     <h4>Use a local account to log in.</h4>
                     <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <div class="checkbox">
-                                @Html.CheckBoxFor(m => m.RememberMe)
-                                @Html.LabelFor(m => m.RememberMe)
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Log in" class="btn btn-default" />
-                        </div>
-                    </div>
-                    <p>
-                        @Html.ActionLink("Register as a new user", "Register")
-                    </p>
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <div class="checkbox">
+                                        @Html.CheckBoxFor(m => m.RememberMe)
+                                        @Html.LabelFor(m => m.RememberMe)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Log in" class="btn btn-default" />
+                                </div>
+                            </div>
+                            <p>
+                                @Html.ActionLink("Register as a new user", "Register")
+                            </p>
+                            <p>
+                                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                            </p>
                 }
             </section>
         </div>
         <div class="col-md-4">
             <section id="socialLoginForm">
-                @*@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })*@
+                @*Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })*@
+    @*@</section>
+            </div>
+        </div>*@
+
+
+    <!--Modal: Login / Register Form-->
+
+   
+            <section id="modalLRForm">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "modal fade", id = "modalLRForm", tabindex = " - 1", role = "dialog", arialabelledby = "myModalLabel", ariahidden = "true" }))
+
+
+                     
+                        
+                     {
+                                @Html.AntiForgeryToken()
+                                <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog cascading-modal" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+
+                                <!--Modal cascading tabs-->
+                                <div class="modal-c-tabs">
+
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs tabs-2 light-blue darken-3" role="tablist">
+                                        <li class="nav-item">
+                                            <i class="fa fa-user mr-1"></i>
+                                            @Html.ActionLink("Log in ", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link active", datatoggle = "tab", href = "#panel7", role = "tab" })
+
+                                        </li>
+                                        <li class="nav-item">
+                                            <i class="fa fa-user-plus mr-1"></i>
+                                            @Html.ActionLink("Sign up ", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link", datatoggle = "tab", href = "#panel8", role = "tab" })
+
+                                        </li>
+                                    </ul>
+
+                                    <!-- Tab panels -->
+                                    <div class="tab-content">
+                                        <!--Panel 7-->
+                                        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                                            <!--Body-->
+                                            <div class="modal-body mb-1">
+                                                <div class="md-form form-sm">
+
+
+                                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                    <i class="fa fa-envelope prefix"></i>
+                                                    @Html.LabelFor(m => m.Email, new { @class = "control-label", id = "form22" })
+                                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", inputtype = "text", id = "form22" })
+                                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+
+                                                </div>
+
+                                                <div class="md-form form-sm">
+                                                    <i class="fa fa-lock prefix"></i>
+                                                    @Html.LabelFor(m => m.Password, new { @class = "control-label", id = "form23" })
+
+                                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", id = "form23", inputtype = "password" })
+                                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+                                                    @*<input type="password" id="form23" class="form-control">
+                                                        <label for="form23">Your password</label>*@
+                                                </div>
+                                                <div class="text-center mt-2">
+                                                    @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-primary" })
+                                                    <i class="fa fa-sign-in ml-1"></i>
+                                                </div>
+                                            </div>
+                                            <!--Footer-->
+                                            <div class="modal-footer display-footer">
+                                                <div class="options text-center text-md-right mt-1">
+                                                    @*<p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>*@
+                                                    <p>Forgot </p>
+                                                    @Html.ActionLink("Password", "ForgotPassword", "Account", htmlAttributes: new { @class = "blue-text" })
+
+                                                </div>
+                                                @Html.ActionLink("Close", "Close", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-blue-grey lighten-5  waves-effect ml-auto", datadismiss = "modal" })
+
+                                            </div>
+
+                                        </div>
+                                        <!--/.Panel 7-->
+                                        <!--Panel 8-->
+                                        @*<div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                                                <!--Body-->
+                                                <div class="modal-body">
+                                                    <div class="md-form form-sm">
+                                                        <i class="fa fa-envelope prefix"></i>
+                                                        <input type="text" id="form24" class="form-control">
+                                                        <label for="form24">Your email</label>
+                                                    </div>
+
+                                                    <div class="md-form form-sm">
+                                                        <i class="fa fa-lock prefix"></i>
+                                                        <input type="password" id="form25" class="form-control">
+                                                        <label for="form25">Your password</label>
+                                                    </div>
+
+                                                    <div class="md-form form-sm">
+                                                        <i class="fa fa-lock prefix"></i>
+                                                        <input type="password" id="form26" class="form-control">
+                                                        <label for="form26">Repeat password</label>
+                                                    </div>
+
+                                                    <div class="text-center form-sm mt-2">
+                                                        <button class="btn btn-info">Sign up <i class="fa fa-sign-in ml-1"></i></button>
+                                                    </div>
+
+                                                </div>
+                                                <!--Footer-->
+                                                <div class="modal-footer">
+                                                    <div class="options text-right">
+                                                        <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>*@
+                                        <!--/.Panel 8-->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                    </div>
+                     }
             </section>
-        </div>
-    </div>
+            
+            <!--Modal: Login / Register Form-->

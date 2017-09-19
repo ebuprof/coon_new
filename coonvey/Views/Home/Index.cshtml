@@ -2,30 +2,349 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Coonvey</h1>
-    <p class="lead">Coonvey Solution</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<script>
+    <!-- Javascript -->
+$('[data-toggle="tooltip"]').tooltip();
+</script>
+<header>
+    <!--start header-->
+    <div class="wrapper">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        @*<p>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and gives you full control over markup
-        for enjoyable, agile development.
-    </p>
-    <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+        <div class="header hm-black-light" style="background-image: url('../Content/assets/img/mb-bg-fb-08.png');"p id="overview">
+            <div class="view hm-black-light">
+                <div class="full-bg-img flex-left">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="title" style="margin-top:150px;">
+                                    <h2 >Buy/Book Your Bus Ticket(s)  At Your Own Comfort</h2>
+                                    <p>
+                                        Coonvey app eliminate the stress in ticket booking/purchasing and reduces the problem of late booking .
+                                        Book anywhere anytime..
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 ml-auto">
+                            </div>
+                            <div class="col-md-5 ml-auto">
+                                <div class="title" style="margin-top:100px;">
+                                    <img src="~/Content/assets/img/abright-1400x1955.png" width="307" height="359" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        @*<p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
+    <!--end header-->
+    <!--start container-->
+
+    <div style="background-color:#c5cfd3">
+        <div class="container">
+
+            <!--search avaliable buses-->
+            <div class="card">
+                <div class="row">
+                    <div class=col-12>
+                        <div class="container">
+                            <!--location icon-->
+                            <div class="col col-lg-1">
+                                <div class="title" style="margin-top:30px;">
+                                   &nbsp;&nbsp;&nbsp; <img src="~/Content/assets/img/buslocate.png" width="28" height="28" />
+                                </div>
+                            </div>
+                                <!-- from -->
+                                
+                            <div class="col col-lg-2">
+
+                                <div class="form-group label-floating">
+                                    <label class="control-label">From</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <!--location icon-->
+                            <div class="col col-lg-1">
+                                <div class="title" style="margin-top:30px;">
+                                    <img src="~/Content/assets/img/buslocate.png" width="28" height="28" />
+                                </div></div>
+
+                                    <div class="col col-lg-2">
+                                        <!-- to -->
+
+
+
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">To</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <!--calendar icon-->
+                                    <div class="col col-lg-1">
+                                        <div class="title" style="margin-top:30px;">
+                                            <img src="~/Content/assets/img/calendar.png" width="28" height="28" />
+                                        </div>
+                                    </div>
+                                    <div class="col col-lg-3">
+                                        <div class="title" style="margin-top:30px;">
+                                            <input class="datepicker form-control" type="text" value="Today" />
+                                        </div>
+                                    </div>
+
+                                    <!--search bus button-->
+                                    <div class="col col-lg-2">
+
+                                        <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click to find avaliable Buses">Search Bus <h6>&raquo;</h6></button>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        @*<p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+        <!--end bus search panel-->
+    <!--title-->
+    <div style="margin-top:50px;">
+        <div class="accent-2" style="text-align:center"><h3 style="color:#a5a6a6"p id="features">&mdash; Features &mdash;</h3></div>
     </div>
-</div>
+    <div style="margin-top:30px;"> </div>
+        <!--new row-->
+
+        <div class="container">
+            <div class="row">
+                <div class=col-12>
+
+                    <!--select transport service card-->
+
+                    <div class="col col-lg-4">
+                        <div class="card card-nav-tabs">
+                            <div class="header header-info">
+                                <div class="card-image">
+                                    <img src="~/Content/assets/img/choice.png" />
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                <div class="tab-content text-center">
+                                    <div class="card-description">Search And Select  Preferred Transport Service</div>
+                                    <div class="card-body">
+                                        Use Coonvey search filter to search by either departure time,arrival time,bus type,ticket prices or transport company.
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!--select seat/book ticket card-->
+
+                    <div class="col col-lg-4">
+                        <div class="card card-nav-tabs">
+                            <div class="header header-info">
+                                <div class="card-image">
+                                    <img src="~/Content/assets/img/book.png" />
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                <div class="tab-content text-center">
+                                    <div class="card-description">Buy ticket(s)</div>
+                                    <div class="card-body">
+                                        The number of seats selected represent the number of  tickets to be booked,
+                                        while the numbers on the seat icons represent your seating position.
+                                        Ticket(s) can be booked in bulk and in advance.
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!--checkin card-->
+                    <div class="col col-lg-4">
+                        <div class="card card-nav-tabs">
+                            <div class="header header-info">
+                                <div class="card-image">
+                                    <img src="~/Content/assets/img/checkin.png" />
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                <div class="tab-content text-center">
+                                    <div class="card-description">Make Payment and Check-in</div>
+                                    <div class="card-body">
+                                        Pay for your ticket(s) using our secured online payment system, and check-in your luggage.
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <!--end row-->
+            </div>
+            <!--end container-->
+        </div>
+
+
+        <!--Coonvey mobile app-->
+
+        <div class="card card-nav-tabs"id="mobile">
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-6" style="margin-top:60px;">
+
+                        <img src="~/Content/assets/img/abright-1400x1955-72.png" width="400" height="458" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-accent-1" style="margin-top:120px;">
+                            <h2>Coonvey  Mobile App.</h2>
+                            <p>Is a swift easy to use bus ticket purchasing application, that gives its users the luxury to purchase their bus ticket from wherever they are at any time. </p>
+                        </div>
+                        <!--google play store link-->
+                        <div class="col-md-6" style="margin-top:60px;">
+                            <div><a href=""><img src="~/Content/assets/img/google.png" /></a></div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+            <div style="margin-top:100px;"></div>
+            <hr />
+            <div class="container">
+            <div class="card">
+                <div class="header header-info">
+                    <div class="container">
+                        <h3>THE FASTEST WAY TO BOOK YOUR TICKET</h3>
+                        <h6>Compare Services And Choose Your Best. The choice is yours..</h6>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="col-12">
+
+                                <div class="col-9">
+
+                                    <div class="col-md-2">
+                                        <div class="card">
+                                            <div class="card-image">
+                                                <img src="~/Content/assets/img/promo.png" />
+                                                </div>
+                                            <div class="content">
+                                                <h5>Discounts</h5>
+                                                <p>
+                                                    Promo discount! Additional discounts sponsored by your favorite transport company exclusively on bus tickets booked via Coonvey
+                                                </p>
+                                            </div></div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="card">
+                                            <div class="card-image">
+                                                <img src="~/Content/assets/img/amenities.png" />
+                                                </div>
+                                            <div class="content">
+                                                <h5>Amenities</h5>
+                                                <p>Get information on amenities provided by verious bus companies.</p>
+                                            </div></div>
+                                        </div>
+                                    <div class="col-md-2">
+                                        <div class="card">
+                                            <div class="card-image">
+                                                <img src="~/Content/assets/img/branches.png" />
+                                            </div>
+                                            <div class="content">
+                                                <h5>Live Tracking</h5>
+                                                <p>Track your bus and keep your family informed with our ‘ Bus Tracking mobile feature’ and know the exact location in real-time.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="card">
+                                            <div class="card-image">
+                                                <img src="~/Content/assets/img/rating.png" />
+                                            </div>
+                                            <div class="content">
+                                                <h5>Ratings and Reviews</h5>
+                                                <p>See ratings and reviews from fellow travellers to aid your make better decisons!</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-4" style="margin-top:80px;">
+                                    <img src="~/Content/assets/img/bookingimg.gif" width="305" height="353" />
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
+
+                <div style="margin-top:160px;"></div>
+
+                </div>
+            </div>
+            <p></p>
+            
+                <div style="background-color:#f2f5f6" id="business">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="container">
+                                    <div class="col col-lg-6">
+                                        <div style="margin-top:80px;"></div>
+                                        <div class="card-image">
+                                            <img src="~/Content/assets/img/homebg-1400x681.jpg" width="570" height="380" />
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col col-lg-6">
+                                        <div style="margin-top:50px;"></div>
+                                        <h1>Coonvey for<br /> Businesses</h1>
+                                        <p>
+                                            Setup your Business to use coonvey and take <br />advantage of the tools to boost your business<br />  and Increase your customer base.<br />Get instant business reports.
+
+                                            Maximize profit <br />by taking advange of Coonvey.<br /> Manage and view sales in all your  business <br />branches from wherever you are, get instant <br />business reports (daly,monthly,yearly reports).<br />
+
+                                            @Html.ActionLink("Subscribe", "subscribe", "account")&nbsp; today to Register your businesses <br />with Coonvey for free and take advantage of<br />  her services.
+                                        </p>
+                                        <div style="margin-top:40px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                            </div>
+            <div style="margin-top:40px;"></div>
+            </div>
+
+               
+
+
+
+
+
+</header>
